@@ -19,12 +19,15 @@ function removeItem(n) {
 }
 // function shows wht is in groceryList array in element #list
 function showList() {
-        let showList = "<ul>"
+        let showList = "<ul>";
+        let removeList = "<ul class='removeList'>";
         for (let i=0; i<groceryList.length; i++){
                 showList += "<li>"+groceryList[i]+"<br />";
-                showList += "<button onClick='removeItem("+i+");' class='remove'>remove</button>  "
+                removeList += "<li><button onClick='removeItem("+i+");' class='remove'> remove "+groceryList[i] +"</button> </li> ";
                 showList += "</li>";
         }
         showList += "</ul>";
-        document.getElementById("list").innerHTML = showList;
+        removeList += "</ul>";
+
+        document.getElementById("list").innerHTML = showList+removeList;
 }
