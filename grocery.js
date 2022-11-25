@@ -8,7 +8,9 @@ function addItem(){
         let input = document.getElementById("item");
         let item = input.value;
         input.value = "";
-        groceryList.push(item);
+        if (item.length > 0){
+                groceryList.push(item);
+        }
         showList();
 }
 
@@ -17,7 +19,7 @@ function removeItem(n) {
         groceryList.splice(n,1);
         showList();
 }
-// function shows wht is in groceryList array in element #list
+// function shows what is in groceryList array in element #list
 function showList() {
         let showList = "<ul>";
         let removeList = "<ul class='removeList'>";
